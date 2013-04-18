@@ -1,0 +1,28 @@
+----------------------------------------
+----------------------------------------
+-------------------
+----
+--
+-- The Von Neumann Calculator
+-- A VHDL Project
+-- Polytech Nice-Sophia
+-- ELEC4
+-- 2013
+--
+----
+-------------------
+----------------------------------------
+----------------------------------------
+
+-- Version 1 : Created the RAM
+---- La simulation du RAM a été modifié
+---- Au lieu d'utiliser Nbadr = 2**16,
+----  nous avons utilisé Nbadr = 2**8
+----  car le simulateur n'arrive pas à
+----  simuler 63556 case de mémoire
+
+----------------------------------------
+------------- Written by ---------------
+------ KaiserHaz and Moustapha LO ------
+----------------------------------------
+----------------------------------------
