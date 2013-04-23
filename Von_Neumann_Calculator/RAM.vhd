@@ -20,7 +20,7 @@
 
 library ieee;
 use ieee.numeric_bit.all;
-use work.mem_package.all;
+use work.VNC_package.all;
 
 -- Entité
 
@@ -31,15 +31,15 @@ entity memoire is
             
   port(     clk,rst : in bit;
             mw : in bit;
-            datain : in signed(Nbbits-1 downto 0);
-            adress : in unsigned (Nbbits-1 downto 0);
-            dataout : out signed (Nbbits-1 downto 0)
+            datain : in word;
+            adress : in address;
+            dataout : out word
        );
 end memoire;
 
 -- Architecture
 
-architecture behaviour of memoire is 
+architecture behaviour_ram of memoire is 
   signal memoires : defmem;
   begin
   
@@ -60,10 +60,13 @@ architecture behaviour of memoire is
     
   end process;
   
-end behaviour;
+end behaviour_ram;
 
 ----------------------------------------
 ----------------------------------------
-------- Written by Moustapha LO --------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
 ----------------------------------------
 ----------------------------------------

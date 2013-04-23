@@ -28,6 +28,7 @@ package mem_package is
 
   constant Nbbits : natural := 16;
   constant Nbadr : natural := 2**8;
+  constant Nbctrl : natural := 21;
   
   subtype word is signed(Nbbits-1 downto 0);
   type defmem is array (natural range 255 downto 0) of word;

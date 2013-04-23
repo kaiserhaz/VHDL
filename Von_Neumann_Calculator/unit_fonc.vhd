@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- File 00 : VNC package
+-- File 22 : Functional Unit
 --
 ----
 -------------------
@@ -20,7 +20,6 @@
 
 library ieee;
 use ieee.numeric_bit.all;
-use std.textio.all;
 use work.VNC_package.all;
   
 -- Entity
@@ -40,10 +39,10 @@ end entity unit_fonc;
 -- Architecture
 
 architecture behaviour_uf of unit_fonc is
-  subtype lword is signed(Nbbits downto 0); 
+--  subtype lword is signed(Nbbits downto 0); 
   begin
     process(fs)
-      variable interm_f : lword;
+      variable interm_f : word;
       begin
         case fs is
           when "0000" => interm_f := datain_a;
@@ -75,7 +74,16 @@ architecture behaviour_uf of unit_fonc is
         
 --        if interm_f > -- Carry and Overflow cases
         
-        f_out <= interm_f(Nbbits-1 downto 0) after tuf;
+        f_out <= interm_f after tuf;
         
     end process;
-end behaviour_uf;     
+end behaviour_uf;
+
+----------------------------------------
+----------------------------------------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
+----------------------------------------
+----------------------------------------

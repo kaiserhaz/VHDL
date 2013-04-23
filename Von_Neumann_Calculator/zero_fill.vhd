@@ -26,7 +26,7 @@ use work.VNC_package.all;
 
 entity zero_fill is
   port(     sb_in : in regaddress;
-            sb_filled_out : out address
+            sb_filled_out : out word
       );
 end entity zero_fill;
 
@@ -38,6 +38,15 @@ architecture behaviour_zf of zero_fill is
       variable interm_addr : address := (others=>'0');
       begin
         interm_addr(sb_in'range) := sb_in;
-        sb_filled_out <= interm_addr;
+        sb_filled_out <= signed(interm_addr);
     end process;
 end behaviour_zf;
+
+----------------------------------------
+----------------------------------------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
+----------------------------------------
+----------------------------------------

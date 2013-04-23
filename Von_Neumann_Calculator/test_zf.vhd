@@ -9,47 +9,47 @@
 -- ELEC4
 -- 2013
 -- 
--- File 25 : Address Extender
+-- File 211 : Zero Fill Testbench
 --
 ----
 -------------------
 ----------------------------------------
 ----------------------------------------
 
--- Libraries
+--Librairies
 
 library ieee;
 use ieee.numeric_bit.all;
 use work.VNC_package.all;
 
+-- Entité
 
--- Entity
-
-entity addr_extender is
-  port(     dr_in, sb_in : in regaddress;
-            addr_extended_out : out address
-      );
-end entity addr_extender;
+entity test_zf is
+end entity test_zf;
 
 -- Architecture
 
-architecture behaviour_aext of addr_extender is
+architecture bench_zf of test_zf is 
+  
+  component zero_fill is
+    port(     sb_in : in regaddress;
+              sb_filled_out : out word
+        );
+  end component;
+  
+  for UUT : zero_fill use entity work.zero_fill(behaviour_zf);
+  
+  signal sb_in_t : regaddress;
+  signal sb_fo_t : word;
+  
   begin
-    process(dr_in, sb_in)
-      variable interm_addr : address;
-      begin
-        if dr_in(dr_in'left) = '1' then
-          interm_addr := (others=>'1');
-        else
-          interm_addr := (others=>'0');
-        end if;
-        
-        interm_addr(dr_in'left + sb_in'left + 1 downto 0) := dr_in & sb_in;
-        
-        addr_extended_out <= interm_addr;
-    end process;
-end behaviour_aext;
-        
+
+    UUT : zero_fill port map(sb_in_t, sb_fo_t);
+    
+    sb_in_t <= "101", "011" after 10 ns, "111" after 20 ns, "000" after 30 ns;
+  
+end bench_zf;
+
 ----------------------------------------
 ----------------------------------------
 ------------- Written by ---------------

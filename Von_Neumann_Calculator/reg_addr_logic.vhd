@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- File 00 : VNC package
+-- File 23 : Register Address Logic
 --
 ----
 -------------------
@@ -36,7 +36,7 @@ end entity reg_addr_logic;
 
 architecture behaviour_ral of reg_addr_logic is
   begin
-    process(dx_in, ax_in, bx_in)
+    process(dx_in, ax_in, bx_in, dr_in, sa_in, sb_in)
       variable interm_out : sysregaddress := (others=>'0');
       begin
         if dx_in(dx_in'left) = '1' then
@@ -61,3 +61,12 @@ architecture behaviour_ral of reg_addr_logic is
         end if;
     end process;
 end behaviour_ral;
+
+----------------------------------------
+----------------------------------------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
+----------------------------------------
+----------------------------------------

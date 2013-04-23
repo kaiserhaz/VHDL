@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- File 00 : VNC package
+-- File 26 : Program Counter
 --
 ----
 -------------------
@@ -40,16 +40,27 @@ end entity prog_counter;
 
 architecture behaviour_pc of prog_counter is
   begin
-    process(clk)
+    pc:process(clk)
       variable pc_count : address := (others=>'0');
       begin
-        case ps_in is
-          when "00" => null;
-          when "01" => pc_count := pc_count + 1;
-          when "10" => pc_count := pc_count + addr_extended_in;
-          when "11" => pc_count := sa_in;
-        end case;
+        if clk = '1' then
+          case ps_in is
+            when "00" => null;
+            when "01" => pc_count := pc_count + 1;
+            when "10" => pc_count := pc_count + addr_extended_in;
+            when "11" => pc_count := sa_in;
+          end case;
+        end if;
         
         pc_out <= pc_count after tpc;
     end process;
 end behaviour_pc;
+
+----------------------------------------
+----------------------------------------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
+----------------------------------------
+----------------------------------------

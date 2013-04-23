@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- File 00 : VNC package
+-- File 27 : Instruction Register
 --
 ----
 -------------------
@@ -20,7 +20,6 @@
 
 library ieee;
 use ieee.numeric_bit.all;
-use std.textio.all;
 use work.VNC_package.all;
   
 -- Entity
@@ -33,7 +32,7 @@ entity instr_reg is
             il_in : in bit;
             datain : in word;
             dr_out, sa_out, sb_out : out regaddress;
-            ir_out : out opcode
+            op_out : out opcode
       );
 end entity instr_reg;
 
@@ -43,11 +42,20 @@ architecture behaviour_ir of instr_reg is
   begin
     process(clk)
       begin
-      if il_in = '1' then
-        ir_out <= unsigned(datain(datain'left downto datain'left-Nbopcode+1)) after tir;
+      if clk = '1' and il_in = '1' then
+        op_out <= unsigned(datain(datain'left downto datain'left-Nbopcode+1)) after tir;
         dr_out <= unsigned(datain(datain'left-Nbopcode downto datain'left-Nbopcode-2)) after tir;
         sa_out <= unsigned(datain(datain'left-Nbopcode-3 downto datain'left-Nbopcode-5)) after tir;
         sb_out <= unsigned(datain(datain'right+Nbregaddr-1 downto 0)) after tir;
       end if;
     end process;
 end behaviour_ir;
+
+----------------------------------------
+----------------------------------------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
+----------------------------------------
+----------------------------------------

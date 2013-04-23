@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- Stimulus file
+-- Stimulus file for RAM
 --
 ----
 -------------------

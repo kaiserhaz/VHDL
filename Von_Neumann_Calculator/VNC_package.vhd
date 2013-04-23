@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- File 00 : VNC package
+-- File 00 : VNC Package
 --
 ----
 -------------------
@@ -65,6 +65,31 @@ package VNC_package is
         );
   end component;
   
+  -- Datapath component
+  
+  component datapath is
+    generic(  tw, tr : time := 3 ns;
+              tpc, tir : time := 2 ns;
+              tmux, tind : time := 1 ns;
+              tuf : time := 4 ns;
+              fich : string := "datapathinit.txt"
+            );
+         
+    port(     clk, rst : in bit;
+              ctrlword : in controlword;
+              datain : in word;
+              adress : in address;
+              dataout : out word;
+              addrout : out address;
+              opcodeout : out opcode;
+              n, z, c, v : out bit
+         );
+  end component;
+  
+  -- ### Intermediate test component, just to see how things work out ###
+  -- ### Not physically implemented in the datapath, but ht behaviour ###
+  -- ###  is similar in the datapath itself                           ###
+  
   -- Register bank component
   
   component banc_registre is
@@ -106,7 +131,7 @@ package VNC_package is
   
   component zero_fill is
     port(     sb_in : in regaddress;
-              sb_filled_out : out address
+              sb_filled_out : out word
         );
   end component;
   
@@ -141,7 +166,7 @@ package VNC_package is
               il_in : in bit;
               datain : in word;
               dr_out, sa_out, sb_out : out regaddress;
-              ir_out : out opcode
+              op_out : out opcode
         );
   end component;
   
@@ -149,6 +174,9 @@ end VNC_package;
 
 ----------------------------------------
 ----------------------------------------
--------- Written by KaiserHaz ----------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
 ----------------------------------------
 ----------------------------------------

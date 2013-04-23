@@ -9,7 +9,7 @@
 -- ELEC4
 -- 2013
 -- 
--- File 01 : VNC package body
+-- File 01 : VNC Package Body
 --
 ----
 -------------------
@@ -54,7 +54,7 @@ package body VNC_package is
         end if;
       end loop;
       return bancreg2;
-  end init_banc_reg;
+  end init_banc_reg;  
   
   --function to_unsigned(arg:signed,size:natural)return unsigned is  
 
@@ -62,6 +62,9 @@ end VNC_package;
 
 ----------------------------------------
 ----------------------------------------
--------- Written by KaiserHaz ----------
+------------- Written by ---------------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
 ----------------------------------------
 ----------------------------------------
