@@ -21,8 +21,18 @@
 ----  car le simulateur n'arrive pas à
 ----  simuler 63556 case de mémoire
 
+-- Version 2 : Created the Datapath
+---- Création des composants du datapath
+----   pour les raisons de tests
+---- Intégration des comportement de
+----   chacuns des composants dans
+----   la description du datapath
+
+----------------------------------------
 ----------------------------------------
 ------------- Written by ---------------
------- KaiserHaz and Moustapha LO ------
+------------ Moustapha LO --------------
+----------------- & --------------------
+------------- KaiserHaz ----------------
 ----------------------------------------
 ----------------------------------------
