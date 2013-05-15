@@ -35,7 +35,6 @@ entity datapath is
   port(     clk, rst : in bit;
             ctrlword : in controlword;
             datain : in word;
-            adress : in address;
             dataout : out word;
             addrout : out address;
             opcodeout : out opcode;

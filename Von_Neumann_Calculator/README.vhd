@@ -28,6 +28,10 @@
 ----   chacuns des composants dans
 ----   la description du datapath
 
+-- Version 3 : Created the Control Unit
+---- Création de l'unité de contrôle
+---- Pas de testbench pour l'instant
+
 ----------------------------------------
 ----------------------------------------
 ------------- Written by ---------------
