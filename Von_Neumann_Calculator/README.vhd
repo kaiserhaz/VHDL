@@ -32,6 +32,13 @@
 ---- Création de l'unité de contrôle
 ---- Pas de testbench pour l'instant
 
+-- Time eval
+-- Basically the datapath is the main source of delay. we need to verify all the delays possible :
+-- 
+
+entity README is
+end entity;
+
 ----------------------------------------
 ----------------------------------------
 ------------- Written by ---------------

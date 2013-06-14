@@ -54,9 +54,7 @@ package body VNC_package is
         end if;
       end loop;
       return bancreg2;
-  end init_banc_reg;  
-  
-  --function to_unsigned(arg:signed,size:natural)return unsigned is  
+  end init_banc_reg;    
 
 end VNC_package;
 

@@ -48,7 +48,6 @@ package VNC_package is
   impure function init_mem(fichier:string)return defmem;          -- Init function of 8-bit depth for the RAM
                                                                   --  delete /256 for full depth
   impure function init_banc_reg(fichier:string)return defbancreg; -- Init function for the register bank
-  --function to_unsigned(arg:signed,size:natural)return unsigned;
 
   -- RAM component
 
@@ -82,104 +81,32 @@ package VNC_package is
               addrout : out address;
               opcodeout : out opcode;
               n, z, c, v : out bit
-         );
+        );
   end component;
+  
+  -- Control unit component
   
   component unite_controle is
     generic(  tmem : time := 3 ns;
               tcalc : time := 2 ns
             );
          
-    port(   clk, rst : in bit;
+    port(   clk, rst, n, z, c, v  : in bit;
             opcodein : in opcode;
-            n, z, c, v : in bit;
             ctrlwordout : out controlword
-         );
+        );
   end component;
   
-  -- ### Intermediate test component, just to see how things work out ###
-  -- ### Not physically implemented in the datapath, but    behaviour ###
-  -- ###  is similar in the datapath itself                           ###
+  -- CPU component
   
---  -- Register bank component
-  
---  component banc_registre is
---    generic(  tw, tr : time := 3 ns;
---              fich : string := "bancreginit.txt"
---            );
---            
---    port(     clk, rw, rst : in bit;
---              datain : in word;
---              d_addr, a_addr, b_addr : in sysregaddress;
---              dataout_a, dataout_b : out word
---        );     
---  end component;
---  
---  -- Functional unit component
---  
---  component unit_fonc is
---    generic(  tuf : time := 4 ns;
---              tind : time := 1 ns
---            );
---            
---    port(     datain_a, datain_b : in word;
---              fs : in fscode;
---              n, z, v, c : out bit;
---              f_out : out word
---        );
---  end component;
---  
---  -- Register Address Logic component
---  
---  component reg_addr_logic is
---    port(     dr_in, sa_in, sb_in : in regaddress;
---              dx_in, ax_in, bx_in : in sysregaddress;
---              da_out, aa_out, ba_out : out sysregaddress
---        );
---  end component;
---  
---  -- Zero-fill component
---  
---  component zero_fill is
---    port(     sb_in : in regaddress;
---              sb_filled_out : out word
---        );
---  end component;
---  
---  -- Address extender component
---  
---  component addr_extender is
---    port(     dr_in, sb_in : in regaddress;
---              addr_extended_out : out address
---        );
---  end component;
---  
---  -- Program counter component
---  
---  component prog_counter is
---    generic(  tpc : time := 2 ns
---            );
---            
---    port(     clk : in bit;
---              sa_in, addr_extended_in : in address;
---              ps_in : in bit_vector(1 downto 0);
---              pc_out : out address
---        );
---  end component;
---  
---  -- Instruction register component
---  
---  component instr_reg is
---    generic(  tir : time := 2 ns
---            );
---            
---    port(     clk : in bit;
---              il_in : in bit;
---              datain : in word;
---              dr_out, sa_out, sb_out : out regaddress;
---              op_out : out opcode
---        );
---  end component;
+  component cpu is
+    port(     clk, rst : in bit;
+              datain : in word;
+              mw : out bit;
+              addrout : out address;
+              dataout : out word
+        );
+  end component;
   
 end VNC_package;
 

@@ -29,9 +29,8 @@ entity unite_controle is
            tcalc : time := 2 ns
          );
        
-  port(     clk, rst : in bit;
+  port(     clk, rst, n, z, c, v : in bit;
             opcodein : in opcode;
-            n, z, c, v : in bit;
             ctrlwordout : out controlword
        );
 end entity unite_controle;
@@ -55,7 +54,7 @@ architecture behaviour_uc of unite_controle is
       end if;
   end process;
       
-  comb:process(currentstate, opcodein)
+  comb:process(currentstate)
     variable ctrlword_interm : controlword := (others=>'0');
     
     begin
