@@ -1,0 +1,23 @@
+-- This is a VHDL simulation stimulus file
+-- The stimuluses are organized according to the fashion below
+-- Cycle time is fixed in testfifo2.vhd using the variable "cycle"
+
+-- RST RW ENABLE DATAIN
+
+     1  1      0   0001 -- Cycle 1
+     0  1      1   0010 -- Cycle 2
+     0  1      1   0100 -- Cycle 3
+     0  1      1   1000 -- Cycle 4
+     0  1      1   0011 -- Cycle 5
+     0  1      1   0110 -- Cycle 6
+     0  1      1   1100 -- Cycle 7
+     0  1      1   1001 -- Cycle 8
+     0  0      1   ZZZZ -- Cycle 9
+     0  0      1   ZZZZ -- Cycle 10
+     0  0      1   ZZZZ -- Cycle 11
+     0  0      1   ZZZZ -- Cycle 12
+     0  0      1   ZZZZ -- Cycle 13
+     0  0      1   ZZZZ -- Cycle 14
+     0  0      1   ZZZZ -- Cycle 15
+     0  0      0   0000 -- Cycle 16
+     1  0      0   0000 -- Cycle 17
