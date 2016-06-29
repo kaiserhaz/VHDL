@@ -34,15 +34,15 @@ vsim -t 1ns work.test_correlator(bench)
 # Include signals in Wave window along with internal signals
 
 add wave *
-add wave /test_correlator/UUT/ctrl_word_t
-add wave /test_correlator/UUT/datapath_comp/ram
-add wave /test_correlator/UUT/datapath_comp/di
-add wave /test_correlator/UUT/datapath_comp/do
-add wave /test_correlator/UUT/datapath_comp/rom_out
-add wave /test_correlator/UUT/datapath_comp/m_mul
-add wave /test_correlator/UUT/datapath_comp/mac
-add wave /test_correlator/UUT/controller_comp/curr_state
-add wave /test_correlator/UUT/controller_comp/next_state
+#add wave /test_correlator/UUT/ctrl_word_t
+#add wave /test_correlator/UUT/datapath_comp/ram
+#add wave /test_correlator/UUT/datapath_comp/di
+#add wave /test_correlator/UUT/datapath_comp/do
+#add wave /test_correlator/UUT/datapath_comp/rom_out
+#add wave /test_correlator/UUT/datapath_comp/m_mul
+#add wave /test_correlator/UUT/datapath_comp/mac
+#add wave /test_correlator/UUT/controller_comp/curr_state
+#add wave /test_correlator/UUT/controller_comp/next_state
 
 # 4.6 µs simulation time
 
