@@ -34,6 +34,10 @@
 -- Version 4 : The design shall be reworked in order to correct every wrong functionality
 ---- Timing information shall also be removed
 
+-- Version 5 : Timing info reinserted, version 5 of changes is the official working version
+---- Testing against the original given assembly code gives positive result, other instructions
+----  not yet tested
+
 entity README is
 end entity;
 

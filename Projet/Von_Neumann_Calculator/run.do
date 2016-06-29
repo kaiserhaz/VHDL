@@ -50,56 +50,56 @@ vsim work.cpuTestbench
 #add wave -r /*
 
 add wave /cputestbench/sysClk
-add wave /cputestbench/cpuClk
 add wave /cputestbench/rst
 add wave /cputestbench/mw
 add wave /cputestbench/din
 add wave /cputestbench/dout
 add wave /cputestbench/addr
 
-add wave /cputestbench/UUT0/nTrans
-add wave /cputestbench/UUT0/zTrans
-add wave /cputestbench/UUT0/ctrlwordTrans
-add wave /cputestbench/UUT0/opcodeTrans
+#add wave /cputestbench/UUT0/nTrans
+#add wave /cputestbench/UUT0/zTrans
+#add wave /cputestbench/UUT0/ctrlwordTrans
+#add wave /cputestbench/UUT0/opcodeTrans
 
 add wave /cputestbench/UUT0/controlU/currentstate
 add wave /cputestbench/UUT0/controlU/nextstate
+add wave /cputestbench/UUT0/controlU/currop
 
-add wave /cputestbench/UUT0/datapathU/rwIn
+#add wave /cputestbench/UUT0/datapathU/rwIn
 add wave /cputestbench/UUT0/datapathU/bancregs
 
 add wave /cputestbench/UUT0/datapathU/busA
 add wave /cputestbench/UUT0/datapathU/busB
 add wave /cputestbench/UUT0/datapathU/busD
 
-add wave /cputestbench/UUT0/datapathU/ilIn
-add wave /cputestbench/UUT0/datapathU/opOut
+#add wave /cputestbench/UUT0/datapathU/ilIn
+#add wave /cputestbench/UUT0/datapathU/opOut
 add wave /cputestbench/UUT0/datapathU/saIn
 add wave /cputestbench/UUT0/datapathU/sbIn
 add wave /cputestbench/UUT0/datapathU/drIn
 
-add wave /cputestbench/UUT0/datapathU/aextOut
+#add wave /cputestbench/UUT0/datapathU/aextOut
 
-add wave /cputestbench/UUT0/datapathU/psIn
+#add wave /cputestbench/UUT0/datapathU/psIn
 add wave /cputestbench/UUT0/datapathU/pcOut
 
-add wave /cputestbench/UUT0/datapathU/mmIn
+#add wave /cputestbench/UUT0/datapathU/mmIn
 
-add wave /cputestbench/UUT0/datapathU/axIn
-add wave /cputestbench/UUT0/datapathU/bxIn
-add wave /cputestbench/UUT0/datapathU/dxIn
+#add wave /cputestbench/UUT0/datapathU/axIn
+#add wave /cputestbench/UUT0/datapathU/bxIn
+#add wave /cputestbench/UUT0/datapathU/dxIn
 add wave /cputestbench/UUT0/datapathU/ralaOut
 add wave /cputestbench/UUT0/datapathU/ralbOut
 add wave /cputestbench/UUT0/datapathU/raldOut
 
-add wave /cputestbench/UUT0/datapathU/zfOut
+#add wave /cputestbench/UUT0/datapathU/zfOut
 
 add wave /cputestbench/UUT0/datapathU/databOut
-add wave /cputestbench/UUT0/datapathU/mbIn
+#add wave /cputestbench/UUT0/datapathU/mbIn
 
-add wave /cputestbench/UUT0/datapathU/fsIn
+#add wave /cputestbench/UUT0/datapathU/fsIn
 add wave /cputestbench/UUT0/datapathU/ufOut
-add wave /cputestbench/UUT0/datapathU/mdIn
+#add wave /cputestbench/UUT0/datapathU/mdIn
 
 # Comment out for loop to view all memory entries, else
 #  leave it just to look at certain entries as defined in
@@ -110,4 +110,4 @@ for { set ii 0 }  { $ii < [llength $memindex] }  { incr ii } {
 }
 
 # Run simulation
-run 500 ns
+run 1 us

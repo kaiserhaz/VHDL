@@ -134,11 +134,7 @@ begin
     
     elsif (clk='1' and clk'event) then        -- Else on clock rising edge
       if (rwIn='1') then                      -- On write
-        bancregs(to_integer(raldOut)) <= busD after 3 ns; -- Write to register with data address
-      
-      else                                    -- On read
-        busA <= bancregs(to_integer(ralaOut)) after 3 ns; -- Output according to the A and B addresses
-        databOut <= bancregs(to_integer(ralbOut)) after 3 ns;
+        bancregs(to_integer(raldOut)) <= busD after 3 ns; -- Write to register with data address 
         
       end if;
       
@@ -147,6 +143,11 @@ begin
   end process;
   
   -- Asynchronous processes
+  
+  -- Register file output
+
+  busA <= bancregs(to_integer(ralaOut)) after 3 ns; -- Output according to the A and B addresses
+  databOut <= bancregs(to_integer(ralbOut)) after 3 ns;
   
   -- ALU process
   

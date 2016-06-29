@@ -46,19 +46,18 @@ begin
   
     if rst='1' then
 	  memoires <= init_mem(meminitfile);       -- Initialisation ou reset
-	  dataout <= X"0000" after 4 ns;
 	
 	elsif (rising_edge(clk) and mw_n='0') then -- Ecriture en memoire
 	  memoires(to_integer(addrin)) <= datain after 4 ns;
-          dataout <= X"0000" after 4 ns;
-	
-	elsif (rising_edge(clk) and mw_n='1') then -- Lecture en memoire
-	  dataout <= memoires(to_integer(addrin)) after 4 ns;
 
 	end if;
 	
   end process;
-    
+  
+  with mw_n select
+    dataout <= memoires(to_integer(addrin)) after 4 ns when '1', -- Lecture en memoire asynchrone
+               X"0000" after 4 ns when others;
+
 end architecture bhvMem;
 
 ----------------------------------------
