@@ -1,3 +1,0 @@
--- This project is dependent on Xilinx EDK, targeting Virtex 5 architecture.
--- Since we have no access to it at the moment, no further development shall be done.
--- That's all.

@@ -13,9 +13,9 @@ vmap work [pwd]/work
 
 # Compile the VHDL source files
 vcom -2008 source/vncPackage.vhd
-vcom -2008 source/module/vhdl/controlUnit.vhd
-vcom -2008 source/module/vhdl/datapath.vhd
-vcom -2008 source/module/vhdl/cpu.vhd
+vcom -2008 -check_synthesis source/module/vhdl/controlUnit.vhd
+vcom -2008 -check_synthesis source/module/vhdl/datapath.vhd
+vcom -2008 -check_synthesis source/module/vhdl/cpu.vhd
 vcom -2008 source/module/vhdl/memory.vhd
 vcom -2008 source/testbench/cpuTestbench.vhd
 
